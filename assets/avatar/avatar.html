@@ -1,0 +1,726 @@
+<html lang="en">
+
+<head>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+         :html {
+            --primary-color: #5155C3;
+            --secondary-color: rgba(0, 0, 0, .25);
+            --tertairy-color: #46AE8E;
+        }
+        /* .avatar_bod {
+            position: absolute;
+            top: 0px;
+            right: 60px;
+            z-index: 100000;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .avatar_bod button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 40px;
+            border: none;
+            margin: 0 10px;
+            background-color: transparent;
+        }
+
+        .avatar_bod button:focus {
+            outline: none;
+        }
+
+        .avatar_icons button {
+            margin: 0 5px;
+            padding: 0;
+            border: none;
+            background-color: transparent;
+        }
+
+        .avatar_icons img {
+            width: 50px;
+            height: 50px;
+        }
+         */
+        /* .codebaby-ui {
+            bottom: 0px !important;
+            background-color: transparent !important;
+            height: 35px !important;
+            border-top-left-radius: 50% 80%;
+            /* //  border-top-right-radius: 50% 100%; */
+        
+        .codebaby-ui-on-chatOpen {
+            bottom: 46px !important;
+            width: 270!important
+        }
+        
+        .hide {
+            display: none !important;
+        }
+        
+        .addColor {
+            background-color: aliceblue !important;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+        }
+        
+        .set-inital-close {
+            top: 0px !important;
+            right: 0px !important;
+        }
+        
+        button.mic {
+            display: none;
+        }
+        
+        .micDoc {
+            position: absolute;
+            bottom: 0;
+            right: 40%;
+            background: white;
+            border: none;
+            padding: 20px 25px;
+            border-radius: 100%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        .fa-microphone {
+            font-size: 30px;
+        }
+        
+        .docInputDiv {
+            position: absolute;
+            bottom: 0;
+            right: 20;
+            display: none;
+            width: 270px;
+            height: 55px;
+            background: #FFFFFF;
+            border: 1px solid #CAD1D4;
+            border-radius: 0px 0px 15px 15px;
+            /* display: flex; */
+        }
+        
+        .send {
+            width: fit-content;
+            padding: 5px;
+            padding-right: 10px;
+            z-index: 1000;
+            font-size: 20px;
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            background-color: white;
+            /* flex: 1; */
+        }
+        
+        .docInput {
+            flex: 5;
+            z-index: 10000;
+            padding: 10px;
+            font-family: 'Roboto', sans-serif;
+            color: #666F74;
+            border: 1px solid #CAD1D4;
+            border-radius: 0px 0px 15px 15px;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 25px;
+            border-right: none;
+            width: 230px !important;
+        }
+        
+        .docChatBubble {
+            overflow-y: scroll;
+            /* display: flex; */
+            flex-direction: column;
+            gap: 5px;
+            display: flex;
+            max-height: 259px;
+            padding-right: 10px;
+            height: 126px;
+        }
+        
+        .docChatBubble::-webkit-scrollbar {
+            width: 9px;
+        }
+        
+        .docChatBubble::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.627);
+            border-radius: 9px;
+        }
+        /* Handle */
+        
+        .docChatBubble::-webkit-scrollbar-thumb {
+            background: var(--tertairy-color);
+            border-radius: 9px;
+        }
+        /* Handle on hover */
+        
+        .docChatBubble::-webkit-scrollbar-thumb:hover {
+            background: rgb(1, 71, 71);
+        }
+        
+        .docChat {
+            background-color: white;
+            padding: 5px 10px;
+            /* max-height: 259px; */
+            display: none;
+            font-family: 'roboto';
+            position: absolute;
+            right: 10;
+            margin: 10px;
+            width: 270px;
+            border-radius: 15px;
+            padding-right: 0;
+            height: 128px;
+            bottom: 120px;
+        }
+        
+        .answers {
+            display: flex;
+            word-wrap: break-word;
+            border-radius: 50px;
+            padding: 5px 20px;
+            width: fit-content;
+            background-color: var(--tertairy-color);
+            margin-top: 10px;
+            align-self: end;
+            color: white;
+            border-top-right-radius: 0;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-size: 13px;
+            /* line-height: 25px; */
+        }
+        
+        .questions {
+            width: fit-content;
+            min-width: 50%;
+            word-wrap: break-word;
+            padding: 15px 19px;
+            background: var(--secondary-color);
+            mix-blend-mode: normal;
+            border-radius: 0px 56px 79px 30px;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-size: 13px;
+            line-height: 15px;
+        }
+        
+        .suggestions {
+            border: 2px solid var(--tertairy-color);
+            word-wrap: break-word;
+            border-radius: 50px;
+            padding: 5px 17px;
+            width: fit-content;
+            font-family: 'Roboto';
+            font-style: normal;
+            font-size: 13px;
+            line-height: 10px;
+        }
+        
+        .suggestion_tray {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 5px
+        }
+        
+        .chatBubbleIcons {
+            position: absolute;
+            top: -16;
+            right: -15;
+            display: flex;
+            flex-direction: row;
+            background-color: white;
+            border-radius: 100%;
+        }
+        
+        .clear_chat {
+            /* width: 45px;
+            height: 45px;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #5155C3; */
+        }
+        
+        .menu_icon_div {
+            width: 32px;
+            height: 32px;
+            font-size: 15px;
+            display: flex;
+            border-radius: 100%;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background-color: var(--tertairy-color);
+            font-weight: 800;
+            z-index: 10;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.467), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        .menu_open {
+            display: flex !important;
+            position: absolute;
+            top: 17px;
+            gap: 4px;
+            right: 37px;
+            height: fit-content;
+            /* padding: 10px; */
+            width: 96px;
+            background-color: transparent;
+            color: #FFF;
+            flex-direction: column;
+        }
+        
+        .menu_close {
+            display: none;
+        }
+        
+        .menu_item {
+            box-shadow: 1px 3px 3px 1px rgb(0 0 0 / 47%), 0 6px 20px 0 rgb(51 51 51 / 19%);
+            background: var(--tertairy-color);
+            padding: 6px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            font-size: 13px;
+        }
+        
+        .chat_disable {
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-color);
+        }
+        
+        .cross_sign {
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-color);
+        }
+        
+        .app_close_sign {
+            width: 29px;
+            height: 28px;
+            position: absolute;
+            bottom: 120;
+            z-index: 10;
+            right: 24;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="docInputDiv">
+
+        <input class="docInput" placeholder="Just Say or type &quot;hello&quot;">
+        <div class="send">
+            <i class="fa fa-paper-plane"></i>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://avatar.codebaby.com/loader.js?id=avatar_61"></script>
+    <div class="docChat">
+        <div class="docChatBubble">
+        </div>
+
+        <div class="chatBubbleIcons">
+            <!-- <div class="clear_chat">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+            <div class="chat_disable close-button">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.35254 2.15234L15.7811 15.5809" stroke="#5155C3" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M2.35254 15.5809L15.7811 2.15236" stroke="#5155C3" stroke-width="4" stroke-linecap="round"/>
+                    </svg> </div> -->
+            <div class="menu_icon_div ">
+                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </div>
+            <div class="menu menu_close">
+                <div class="menu_item clear_chat">
+                    <div class="menu_icon"><i class="fa fa-trash" aria-hidden="true"></i></div> <span>Clear Chats</span>
+                </div>
+                <div class="menu_item  close-button">
+                    <div class="menu_icon"><svg width="15" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.35254 2.15234L15.7811 15.5809" stroke="#ffffff" stroke-width="4" stroke-linecap="round"></path>
+                    <path d="M2.35254 15.5809L15.7811 2.15236" stroke="#ffffff" stroke-width="4" stroke-linecap="round"></path>
+                    </svg></div> <span>Close Avatar</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="app_close_sign close-button">
+        <svg width="14" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.35254 2.15234L15.7811 15.5809" stroke="#5155C3" stroke-width="4" stroke-linecap="round"/>
+            <path d="M2.35254 15.5809L15.7811 2.15236" stroke="#5155C3" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+    </div>
+
+    <script type="text/javascript">
+        var menu = 0;
+        $('.menu_icon_div').click(() => {
+            if (menu === 0) {
+                $('.menu').removeClass('menu_close').addClass('menu_open');
+                menu = 1;
+            } else {
+                $('.menu').removeClass('menu_open').addClass('menu_close');
+                menu = 0;
+            }
+
+        })
+        var responseArray = [];
+
+        function visibileChatBuble() {
+            Height.postMessage(500);
+            $('.app_close_sign').attr('style', 'visibility:hidden');
+            if (responseArray.length)
+                $('.docChat').attr('style', 'display:block');
+            $('.docInputDiv').attr('style', 'display:flex');
+            $('.codebaby-ui').addClass('codebaby-ui-on-chatOpen');
+            $('.codebaby-ui').attr('style', 'bottom:46px !important; width: 270px !important; ');
+
+            chatHistory = 0;
+        }
+
+        function drawChatBubble() {
+            if (localStorage.getItem('responseData')) {
+                var k = JSON.parse(localStorage.getItem('responseData'));
+
+                responseArray = k;
+                for (var i = 0; i < k.length; i++) {
+                    var entries = Object.entries(k[i]);
+                    let data = entries.map(([key, val] = entry) => {
+                        switch (key) {
+                            case 'question':
+                                drawQuestion(val);
+                                break;
+                            case 'answer':
+                                drawAnswer(val);
+                                break;
+                            case 'option':
+                                drawSuggestion(val);
+                                break;
+                        }
+                    });
+                }
+            }
+        }
+
+        function drawAnswer(text) {
+            $('.docChatBubble').append(`<div class="answers">
+                            ${text}
+                                </div>`);
+        }
+
+        function drawQuestion(text, responseId) {
+            if (responseId === null) {
+                responseId = 1
+            }
+            $('.docChatBubble').append(`<div class="questions ques${responseId}">${text}</div>`);
+        }
+
+        function drawSuggestion(mdata, mval, responseId, clickResponseId) {
+            if (responseId === null) {
+                responseId = 1, mval = 1, clickResponseId = 1
+            };
+            $('.docChatBubble').append(`<div class="suggestions sug${responseId}${clickResponseId}">
+                            <span>
+                             ${mdata}
+                             </span>
+                             <span style="display:none">
+                                ${mval}
+
+                                </span>
+                                </div>`);
+        }
+
+        $('.docInput').click(() => {
+            closeChatBubble();
+
+            $('.codebaby-ui').addClass('codebaby-ui-on-chatOpen');
+            $('.codebaby-ui').attr('style', 'bottom:301 !important; width: 270 !important');
+
+            $('.docInputDiv').attr('style', 'display:flex; visibility:visible; bottom:246; ');
+            $('.app_close_sign').attr('style', 'bottom:379');
+            Height.postMessage(700);
+        });
+        // window.addEventListener('native.hidekeyboard', () => {
+        //     $('.docInputDiv').attr('style', 'bottom:0');
+        //     $('.codebaby-ui').attr('style', 'bottom:64');
+        // });
+        // window.addEventListener("resize", (e) => {
+        //     $('.docInputDiv')[0].value = "Virtual keyboard detected!!!";
+        // });
+        $('.docInput').blur(function() {
+            $('.docInputDiv').attr('style', 'display:flex; visibility:visible; bottom:0');
+            $('.codebaby-ui').attr('style', 'bottom:46;width: 270 !important');
+            $('.app_close_sign').attr('style', 'bottom:150');
+            Height.postMessage(300);
+        })
+        $(document).blur(function() {
+            $('.docInputDiv').attr('style', 'display:flex; visibility:visible; bottom:0');
+            $('.codebaby-ui').attr('style', 'bottom:46; width: 270 !important');
+            $('.app_close_sign').attr('style', 'bottom:150; ');
+            Height.postMessage(300);
+        })
+        $('.docInput').keyup((keyboardEvent) => {
+            const key = keyboardEvent.code || keyboardEvent.keyCode;
+            if (key === 'Enter' || key === 13) {
+                $('.docInput').blur();
+            }
+        });
+        // $('.docInput').keydown(() => {
+        //     $('.docInputDiv').attr('style', 'bottom:0');
+        //     $('.codebaby-ui').attr('style', 'bottom:48');
+        //     Height.postMessage(200);
+        // })
+        // window.onblur = function(e) {
+        //     $('.docInputDiv').attr('style', 'bottom:0');
+        //     $('.codebaby-ui').attr('style', 'bottom:48');
+        // };
+        //    ('focusout', function(e) {
+        //         $('.docInputDiv').attr('style', 'bottom:0');
+        //         $('.codebaby-ui').attr('style', 'bottom:48');
+        //     });
+        var previousText = '';
+
+        function removeElevatedAvatar() {
+            $('.docInputDiv').attr('style', 'bottom:0');
+            $('.codebaby-ui').attr('style', 'bottom:46');
+            Height.postMessage(200);
+        }
+
+        function setDynamicColor(primaryColor, secondarColor, tertiaryColor) {
+            console.log(`${primaryColor} : new color  ${tertiaryColor} : old color`);
+            document.documentElement.style.setProperty("--primary-color", `${primaryColor}`);
+            document.documentElement.style.setProperty("--tertairy-color", `${tertiaryColor}`);
+            document.documentElement.style.setProperty("--secondary-color", `${secondarColor}`);
+        }
+
+        function listenData(text) {
+            Id.postMessage(`ffffffff + ${text}`);
+            console.log(`${text} : new text ${previousText} : old text`);
+            if (previousText === text) {
+
+                return;
+            }
+            previousText = text;
+            $('.docInput')[0].setAttribute('value', `${text}`);
+            prevoiusQuestion =
+                vidbaby.$(document).trigger('na-ask.vidbaby', text);
+            vidbaby.$('.chat-icon').trigger('click');
+            Height.postMessage(500);
+            responseArray.push({
+                'answer': text
+            });
+            localStorage.setItem('responseData', JSON.stringify(responseArray));
+            // vidbaby.$('.cha')
+            drawAnswer(text);
+            $('.docInput')[0].value = '';
+
+        }
+        var chatHistory = 1;
+        var isResponse = false;
+        var responseId = 0;
+        $(document).ready(function() {
+            $('.docInput')[0].value = '';
+            drawChatBubble();
+            $(document).on('na-playerBuilt.vidbaby', function(event, data) { //post initialisation code here.
+                // vidbaby.$(' .codebaby-ui .chat').attr('style', 'display: none !important');
+
+
+                vidbaby.$('.chat-icon').click(() => {
+                    // vidbaby.$('.codebaby-ui > input').attr('style', 'display: none !important');
+                    if (chatHistory === 1) {
+                        visibileChatBuble();
+                    } else {
+                        closeChatBubble();
+                    }
+                })
+            });
+
+        });
+
+        $(document).on('na-response.vidbaby', function(event, responseData) {
+
+            isResponse = true;
+            console.log(responseData);
+            const data = responseData;
+            if (data && data.answerText) {
+                const answer = data.answerText;
+                const idRegex = /"id"\s*:\s*"([^"]*)"/;
+                const idMatch = answer.match(idRegex);
+                const id = idMatch ? idMatch[1] : null;
+                if (id) {
+                    //window.flutter_inject_channel.postMessage(id);
+                    Id.postMessage(`${id} + sdfsfd + ${chatHistory}`);
+                    console.log(id);
+                } else {
+                    // window.flutter_inject_channel.postMessage("NoId");
+                    Id.postMessage(`noId + sdfsfd + ${chatHistory}`)
+                    console.log("NO Id");
+                }
+            }
+            var element = '';
+            if (responseData) {
+                if (chatHistory === 1) {
+                    visibileChatBuble();
+                }
+                if (responseData.answerText) {
+
+                    drawQuestion(responseData.answerText, responseId);
+                    responseArray.push({
+                        'question': responseData.answerText
+                    });
+                    localStorage.setItem('responseData', JSON.stringify(responseArray));
+
+
+                }
+                let clickResponseId = 0;
+                //Clickable responses will be returned in responseData.clickableResponses
+                if (responseData.clickableResponses) {
+                    $('.docChatBubble').append('<div class="suggestion_tray"></div>')
+                    var clickResponse = responseData.clickableResponses;
+                    // vidbaby.addClickableResponses(responseData.clickableResponses)
+                    clickResponse.forEach(data => {
+                        var mdata = data[0];
+                        var mval = data[1].substring(2, data[1].length - 2);
+                        // $('.docChatBubble').attr('style', 'display:flex').append(
+
+                        drawSuggestion(mdata, mval, responseId, clickResponseId)
+                        responseArray.push({
+                            'option': mdata
+                        });
+                        localStorage.setItem('responseData', JSON.stringify(responseArray));
+                        $('.docChatBubble').animate({
+                            scrollTop: $('.docChatBubble').prop("scrollHeight")
+                        }, 400);
+                        $(`.sug${responseId}${clickResponseId}`).click(() => {
+                            vidbaby.$(document).trigger('na-ask.vidbaby', {
+                                'text': mdata,
+                                'sendVal': mval,
+                                'isCallback': false,
+                                origin: 'Clickable response'
+                            });
+                            drawAnswer(mdata);
+                            responseArray.push({
+                                'answer': mdata
+                            });
+                            localStorage.setItem('responseData', JSON.stringify(responseArray));
+                        })
+                        clickResponseId++;
+                    });
+                }
+                responseId++;
+                $('.docChatBubble').animate({
+                    scrollTop: $('.docChatBubble').prop("scrollHeight")
+                }, 400);
+            }
+        });
+    </script>
+
+
+    <!--<button onclick="getDAta()">get ddata</button>-->
+    <script>
+        $('.close-button').click(() => {
+            Close.postMessage('close');
+        });
+
+        $('.docInput').on('keypress', function(e) {
+            if (e.which == 13) {
+                var val = $('.docInput')[0].value;
+                if (val) {
+                    Height.postMessage(500);
+                    vidbaby.$(document).trigger('na-ask.vidbaby', val);
+                    drawAnswer(val)
+                    responseArray.push({
+                        'answer': val
+                    });
+                    localStorage.setItem('responseData', JSON.stringify(responseArray));
+                    $('.docChatBubble').animate({
+                        scrollTop: $('.docChatBubble').prop("scrollHeight")
+                    }, 400);
+                    $('.docInput')[0].value = '';
+                }
+            }
+        });
+        $('.send').click(() => {
+
+            var val = $('.docInput')[0].value;
+
+            if (val) {
+                vidbaby.$(document).trigger('na-ask.vidbaby', val);
+                Height.postMessage(400);
+
+
+                drawAnswer(val)
+                responseArray.push({
+                    'answer': val
+                });
+                localStorage.setItem('responseData', JSON.stringify(responseArray));
+                $('.docChatBubble').animate({
+                    scrollTop: $('.docChatBubble').prop("scrollHeight")
+                }, 400);
+                $('.docInput')[0].value = '';
+            }
+        });
+
+
+        function closeChatBubble() {
+            $('.docChat').attr('style', 'visibility:hidden');
+            chatHistory = 1;
+            $('.docInputDiv').attr('style', 'visibility:hidden');
+            $('.app_close_sign').attr('style', 'visibility:visible');
+            $('.codebaby-ui').removeClass('codebaby-ui-on-chatOpen');
+            $('.codebaby-ui').attr('style', 'bottom:0 !important; width:245px !important ');
+            Height.postMessage(200);
+
+        }
+        $('.clear_chat').click(() => {
+            localStorage.clear();
+            $('.docChatBubble').empty();
+            responseArray = [];
+            closeChatBubble();
+
+        })
+
+        function getDAta() {
+            // var k = JSON.parse(localStorage.getItem('responseData'));
+            // for (var i = 0; i < k.length; i++) {
+            //     var entries = Object.entries(k[i]);
+            //     let data = entries.map(([key, val] = entry) => {
+            //         return `The ＄{key} is ＄{val}`;
+            //     });
+            // }
+            drawChatBubble();
+        }
+    </script>
+</body>
+
+</html>

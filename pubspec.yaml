@@ -1,90 +1,388 @@
 name: famici
 description: A new Flutter project.
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
+
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# In Android, build-name is used as versionName while build-number used as versionCode.
-# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
-# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
-# Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-# In Windows, build-name is used as the major, minor, and patch parts
-# of the product and file versions while build-number is used as the build suffix.
 version: 1.0.0+1
 
 environment:
   sdk: '>=2.19.6 <3.0.0'
 
-# Dependencies specify other packages that your package needs in order to work.
-# To automatically upgrade your package dependencies to the latest versions
-# consider running `flutter pub upgrade --major-versions`. Alternatively,
-# dependencies can be manually updated by changing the version numbers below to
-# the latest version available on pub.dev. To see which dependencies have newer
-# versions available, run `flutter pub outdated`.
 dependencies:
   flutter:
     sdk: flutter
+  cupertino_icons: ^1.0.5
+  flutter_colorpicker: ^1.0.3
+  icalendar_parser: ^1.1.1
+  #Localization
+  easy_localization: ^3.0.1
+  intl: ^0.17.0
+  flutter_datetime_picker: ^1.5.1
+  just_the_tooltip: ^0.0.12
+  #Bloc supported plugins
+  bloc: ^8.0.3
+  flutter_bloc: ^8.0.1
+  hydrated_bloc: ^8.1.0
+  equatable: ^2.0.3
+  provider: ^6.0.3
+
+  # clipper
+  card_swiper:
+    path: ./card_swiper
+  flutter_swiper_view: any
+  flutter_svg_provider: any
+  # Connectivity
+  connectivity_plus: ^3.0.2
+  battery_plus: ^2.1.4
+  network_info_plus: ^2.1.3
+  flutter_reactive_ble: ^5.0.2
+  wifi_scan: ^0.3.0
+  connectivity_checker: ^1.1.0
+  http: ^0.13.3
+  xml: ^6.2.2
+  html: ^0.15.4
+  flutter_html: ^3.0.0-beta.2
+  flutter_native_timezone: ^2.0.0
+  timezone: ^0.9.2
+  flutter_staggered_grid_view: ^0.7.0
 
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  #firebase
+  firebase_core: ^2.5.0
+  firebase_messaging: ^14.2.2
+  cloud_firestore: ^4.3.2
+  firebase_performance: ^0.9.0+11
+  firebase_crashlytics: ^3.0.12
+
+  #Amplify
+  amplify_api: ^1.0.1
+  amplify_flutter: ^1.0.1
+  amplify_analytics_pinpoint: ^1.0.0
+  amplify_auth_cognito: ^1.0.1
+  amplify_storage_s3: ^1.0.1
+
+  #spech recognition
+  speech_to_text: ^5.5.0
+
+  #avatar
+  avatar_glow: ^2.0.2
+  lottie: ^2.3.2
+
+  #chime
+  eggnstone_amazon_chime: ^4.2.1
+
+  #mood tracker
+  animated_emoji: any
+  chips_choice: ^3.0.1
+  audioplayers: any
+
+  #utils
+  dio: ^4.0.6
+  version: ^3.0.2
+  # flutter_icons: ^1.1.0
+  debug_logger: ^0.0.23
+  flutter_secure_storage: ^5.0.2
+  cached_network_image: ^3.2.1
+  image_picker: ^1.0.4
+  geolocator: ^8.2.1
+  camera: ^0.10.5+5
+  path_provider: ^2.0.10
+
+
+  loading_overlay: ^0.3.0
+  loading_indicator: ^3.1.0
+  battery_indicator: ^0.1.1
+
+  flutter_svg: ^1.1.0
+  flutter_neumorphic: ^3.2.0
+  page_transition: ^2.0.5
+  enum_to_string: ^2.0.1
+  formz: ^0.4.1
+  responsive_grid_list: ^1.2.4
+  responsive_grid: ^2.1.0
+  photo_view: any
+  video_player: ^2.7.2
+  flutter_staggered_animations: ^1.0.0
+  shimmer: ^2.0.0
+  table_calendar: ^3.0.6
+
+  phone_number: ^0.12.0+2
+  flutter_libphonenumber: ^1.2.4
+  mime: ^1.0.2
+  intl_phone_number_input: ^0.7.0+2
+  stop_watch_timer: ^1.5.0
+
+  just_audio: ^0.9.24
+  audio_service: ^0.18.4
+  just_waveform: ^0.0.2
+  flutter_sound: ^9.2.13
+  audio_session: ^0.1.7
+
+  permission_handler: ^9.2.0
+
+  auto_route: ^4.0.1
+  ota_update: ^5.1.0
+  google_fonts: ^3.0.1
+  tap_debouncer: ^2.0.2
+  livekit_client: ^1.1.8
+  livecare:
+    git:
+      url: https://github.com/tharukachampit/livecare.git
+      ref: v1.0.0
+
+  flutter_webrtc: ^0.9.23
+  timeago: ^3.2.2
+  timeago_flutter: ^1.1.0
+  flutter_slidable: ^1.3.0
+  auto_orientation: ^2.2.1
+  fl_chart: ^0.45.0
+  timetable_view: ^0.3.0
+  calendar_view:
+    path: ./flutter_calendar_view
+  webview_flutter_plus: ^0.3.0+2
+  flutter_inappwebview: ^5.7.2+3
+  awesome_notifications: 0.7.0-beta.4
+  sqflite: ^2.0.2+1
+  sqflite_common_ffi: ^2.1.1
+  flutter_ringtone_player: ^3.2.0
+  animations: ^2.0.3
+  device_orientation: ^0.0.1
+  wakelock: ^0.6.2
+  rive: ^0.8.4
+  url_launcher: ^6.1.7
+  device_apps: ^2.2.0
+  open_app_settings: ^2.0.1
+  badges: ^2.0.3
+  google_maps_flutter: ^2.1.7
+  geocoding: ^2.0.4
+  device_info_plus: ^8.2.2
+  uuid: ^3.0.6
+  flutter_rounded_date_picker: ^3.0.1
+  in_app_notification: ^1.1.1
+  path_provider_android: ^2.0.14
+  easy_pdf_viewer: ^1.0.7
+  flutter_screenutil: ^5.5.3+2
+  package_info_plus: ^3.0.2
+  mixpanel_flutter: ^2.1.1
+  external_app_launcher: ^3.0.0
+  # advance_pdf_viewer2: ^2.0.5+1
+  rrule: ^0.2.10
+  win32: ^3.0.0
+
+  #coutdown timer
+  timer_count_down: ^2.2.2
+
+  webrtc_interface: ^1.0.10
+  #Image Crop and Rotation
+  crop_image:
+    path: ./crop_image
+  flutter_native_splash: ^2.2.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.1
+  auto_route_generator: ^4.0.0
+  build_runner: ^2.1.11
+  flutter_launcher_icons: ^0.13.1
+  change_app_package_name: ^0.1.3
 
-# For information on the generic Dart part of this file, see the
-# following page: https://dart.dev/tools/pub/pubspec
-
-# The following section is specific to Flutter packages.
 flutter:
-
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/
+    - assets/icons/
+    - assets/icons/dashboard/
+    - assets/icons/weather/64x64/day/
+    - assets/icons/weather/64x64/night/
+    - assets/images/
+    - assets/langs/
+    - assets/fonts/
+    - assets/audio/
+    - assets/animations/
+    - assets/games/
+    - assets/avatar/
+    - assets/avatar/icons/
+    - assets/icons/vitals/graph/
+    - assets/icons/vitals/icons/
+    - assets/icons/lottie/
+    #    - jigsaw game
+    - assets/games/jigsaw/
+    - assets/games/jigsaw/css/
+    - assets/games/jigsaw/js/
+    - assets/games/jigsaw/sounds/
+    - assets/games/jigsaw/sprites/
+    - assets/games/jigsaw/sprites/difficulty_0/
+    - assets/games/jigsaw/sprites/difficulty_1/
+    - assets/games/jigsaw/sprites/difficulty_2/
+    - assets/games/jigsaw/sprites/difficulty_3/
+    #    - solitaire game
+    - assets/games/solitaire/
+    - assets/games/solitaire/css/
+    - assets/games/solitaire/js/
+    - assets/games/solitaire/sounds/
+    - assets/games/solitaire/sprites/
+    - assets/games/solitaire/sprites/cards/
 
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/assets-and-images/#resolution-aware
+    #    - sudoku game
+    - assets/games/sudoku/
+    - assets/games/sudoku/css/
+    - assets/games/sudoku/js/
+    - assets/games/sudoku/sounds/
+    - assets/games/sudoku/sprites/
 
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.dev/assets-and-images/#from-packages
+    #    - sudoku game
+    - assets/games/word_search/
+    - assets/games/word_search/css/
+    - assets/games/word_search/js/
+    - assets/games/word_search/sounds/
+    - assets/games/word_search/sprites/
 
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+
+flutter_native_splash:
+  # This package generates native code to customize Flutter's default white native splash screen
+  # with background color and splash image.
+  # Customize the parameters below, and run the following command in the terminal:
+  # dart run flutter_native_splash:create
+  # To restore Flutter's default white splash screen, run the following command in the terminal:
+  # dart run flutter_native_splash:remove
+
+  # IMPORTANT NOTE: These parameter do not affect the configuration of Android 12 and later, which
+  # handle splash screens differently that prior versions of Android.  Android 12 and later must be
+  # configured specifically in the android_12 section below.
+
+  # color or background_image is the only required parameter.  Use color to set the background
+  # of your splash screen to a solid color.  Use background_image to set the background of your
+  # splash screen to a png image.  This is useful for gradients. The image will be stretch to the
+  # size of the app. Only one parameter can be used, color and background_image cannot both be set.
+#  color: "#889902"
+  background_image: "assets/image/splash.png"
+
+  # Optional parameters are listed below.  To enable a parameter, uncomment the line by removing
+  # the leading # character.
+
+  # The image parameter allows you to specify an image used in the splash screen.  It must be a
+  # png file and should be sized for 4x pixel density.
+#  image: assets/image/splash.png
+
+  # The branding property allows you to specify an image used as branding in the splash screen.
+  # It must be a png file. It is supported for Android, iOS and the Web.  For Android 12,
+  # see the Android 12 section below.
+  #branding: assets/dart.png
+
+  # To position the branding image at the bottom of the screen you can use bottom, bottomRight,
+  # and bottomLeft. The default values is bottom if not specified or specified something else.
+  #branding_mode: bottom
+
+  # The color_dark, background_image_dark, image_dark, branding_dark are parameters that set the background
+  # and image when the device is in dark mode. If they are not specified, the app will use the
+  # parameters from above. If the image_dark parameter is specified, color_dark or
+  # background_image_dark must be specified.  color_dark and background_image_dark cannot both be
+  # set.
+  #color_dark: "#042a49"
+  #background_image_dark: "assets/dark-background.png"
+  #image_dark: assets/splash-invert.png
+  #branding_dark: assets/dart_dark.png
+
+  # From Android 12 onwards, the splash screen is handled differently than in previous versions.
+  # Please visit https://developer.android.com/guide/topics/ui/splash-screen
+  # Following are specific parameters for Android 12+.
+  android_12:
+  # The image parameter sets the splash screen icon image.  If this parameter is not specified,
+  # the app's launcher icon will be used instead.
+  # Please note that the splash screen will be clipped to a circle on the center of the screen.
+  # App icon with an icon background: This should be 960×960 pixels, and fit within a circle
+  # 640 pixels in diameter.
+  # App icon without an icon background: This should be 1152×1152 pixels, and fit within a circle
+  # 768 pixels in diameter.
+#    image: assets/image/splash.png
+
+  # Splash screen background color.
+  #color: "#42a5f5"
+
+  # App icon background color.
+  #icon_background_color: "#111111"
+
+  # The branding property allows you to specify an image used as branding in the splash screen.
+  #branding: assets/dart.png
+
+  # The image_dark, color_dark, icon_background_color_dark, and branding_dark set values that
+  # apply when the device is in dark mode. If they are not specified, the app will use the
+  # parameters from above.
+  #image_dark: assets/android12splash-invert.png
+  #color_dark: "#042a49"
+  #icon_background_color_dark: "#eeeeee"
+
+  # The android, ios and web parameters can be used to disable generating a splash screen on a given
+  # platform.
+  #android: false
+  #ios: false
+  #web: false
+
+  # Platform specific images can be specified with the following parameters, which will override
+  # the respective parameter.  You may specify all, selected, or none of these parameters:
+  #color_android: "#42a5f5"
+  #color_dark_android: "#042a49"
+  #color_ios: "#42a5f5"
+  #color_dark_ios: "#042a49"
+  #color_web: "#42a5f5"
+  #color_dark_web: "#042a49"
+  #image_android: assets/splash-android.png
+  #image_dark_android: assets/splash-invert-android.png
+  #image_ios: assets/splash-ios.png
+  #image_dark_ios: assets/splash-invert-ios.png
+  #image_web: assets/splash-web.gif
+  #image_dark_web: assets/splash-invert-web.gif
+#  background_image_android: "assets/image/splash.png"
+  #background_image_dark_android: "assets/dark-background-android.png"
+  #background_image_ios: "assets/background-ios.png"
+  #background_image_dark_ios: "assets/dark-background-ios.png"
+  #background_image_web: "assets/background-web.png"
+  #background_image_dark_web: "assets/dark-background-web.png"
+  #branding_android: assets/brand-android.png
+  #branding_dark_android: assets/dart_dark-android.png
+  #branding_ios: assets/brand-ios.png
+  #branding_dark_ios: assets/dart_dark-ios.png
+  #branding_web: assets/brand-web.gif
+  #branding_dark_web: assets/dart_dark-web.gif
+
+  # The position of the splash image can be set with android_gravity, ios_content_mode, and
+  # web_image_mode parameters.  All default to center.
   #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
+  # android_gravity can be one of the following Android Gravity (see
+  # https://developer.android.com/reference/android/view/Gravity): bottom, center,
+  # center_horizontal, center_vertical, clip_horizontal, clip_vertical, end, fill, fill_horizontal,
+  # fill_vertical, left, right, start, or top.
+  #android_gravity: center
+  #
+  # ios_content_mode can be one of the following iOS UIView.ContentMode (see
+  # https://developer.apple.com/documentation/uikit/uiview/contentmode): scaleToFill,
+  # scaleAspectFit, scaleAspectFill, center, top, bottom, left, right, topLeft, topRight,
+  # bottomLeft, or bottomRight.
+  #ios_content_mode: center
+  #
+  # web_image_mode can be one of the following modes: center, contain, stretch, and cover.
+  #web_image_mode: center
+
+  # The screen orientation can be set in Android with the android_screen_orientation parameter.
+  # Valid parameters can be found here:
+  # https://developer.android.com/guide/topics/manifest/activity-element#screen
+  #android_screen_orientation: sensorLandscape
+
+  # To hide the notification bar, use the fullscreen parameter.  Has no effect in web since web
+  # has no notification bar.  Defaults to false.
+  # NOTE: Unlike Android, iOS will not automatically show the notification bar when the app loads.
+  #       To show the notification bar, add the following code to your Flutter app:
+  #       WidgetsFlutterBinding.ensureInitialized();
+  #       SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.bottom, SystemUiOverlay.top], );
+  fullscreen: true
+
+  # If you have changed the name(s) of your info.plist file(s), you can specify the filename(s)
+  # with the info_plist_files parameter.  Remove only the # characters in the three lines below,
+  # do not remove any spaces:
+  #info_plist_files:
+  #  - 'ios/Runner/Info-Debug.plist'
+  #  - 'ios/Runner/Info-Release.plist'
